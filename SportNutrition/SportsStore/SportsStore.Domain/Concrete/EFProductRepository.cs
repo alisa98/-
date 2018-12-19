@@ -16,13 +16,13 @@ namespace SportsStore.Domain.Concrete
         public void SaveProduct(SportNutrition product)
         {
 
-            if (product.NutritionId == 0)
+            if (product.SportNutritionId == 0)
             {
                 context.Products.Add(product);
             }
             else
             {
-                SportNutrition dbEntry = context.Products.Find(product.NutritionId);
+                SportNutrition dbEntry = context.Products.Find(product.SportNutritionId);
                 if (dbEntry != null)
                 {
                     dbEntry.Name = product.Name;

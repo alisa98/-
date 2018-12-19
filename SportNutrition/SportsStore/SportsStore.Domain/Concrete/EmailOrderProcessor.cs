@@ -8,15 +8,15 @@ namespace SportsStore.Domain.Concrete
 {
     public class EmailSettings
     {
-        public string MailToAddress = "anzhelika.kravchuk@gmail.com";
-        public string MailFromAddress = "anzhelika.kravchuk@gmail.com";
+        public string MailToAddress = "alisa.utlik@gmail.com";
+        public string MailFromAddress = "alisa.utlik@gmail.com";
         public bool UseSsl = true;
-        public string Username = "anzhelika.kravchuk@gmail.com";
+        public string Username = "alisa.utlik@gmail.com";
         public string Password = "artem08nasty98";
         public string ServerName = "smtp.gmail.com";
         public int ServerPort = 587;
         public bool WriteAsFile = false;
-        public string FileLocation = @"c:\sports_store_emails";
+        public string FileLocation = @"c:\shop";
     }
 
     public class EmailOrderProcessor : IOrderProcessor

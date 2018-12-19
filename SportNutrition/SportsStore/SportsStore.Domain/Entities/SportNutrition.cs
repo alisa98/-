@@ -6,7 +6,7 @@ namespace SportsStore.Domain.Entities
     public class SportNutrition
     {
         [ScaffoldColumn(false)]
-        public int NutritionId { get; set; }
+        public int SportNutritionId { get; set; }
 
         [Required(ErrorMessage = "Please enter a product name")]
         public string Name { get; set; }

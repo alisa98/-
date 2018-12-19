@@ -1,4 +1,4 @@
-﻿@model IEnumerable<SportsStore.Domain.Entities.Product>
+﻿@model IEnumerable<SportsStore.Domain.Entities.SportNutrition>
 
 @{
     ViewBag.Title = "Admin: All Products";
@@ -15,12 +15,12 @@
     </tr>
     @foreach (var item in Model) {
         <tr>
-            <td>@item.ProductID</td>
-            <td>@Html.ActionLink(item.Name, "Edit", new { item.ProductID })</td>
+            <td>@item.SportNutritionId</td>
+            <td>@Html.ActionLink(item.Name, "Edit", new { item.SportNutritionId })</td>
             <td class="NumericCol">@item.Price.ToString("c")</td>
             <td>
                 @using (Html.BeginForm("Delete", "Admin")) {
-                    @Html.Hidden("ProductID", item.ProductID)
+                    @Html.Hidden("ProductID", item.SportNutritionId)
                     <input type="submit" value="Удалить"/>
                 }
             </td>

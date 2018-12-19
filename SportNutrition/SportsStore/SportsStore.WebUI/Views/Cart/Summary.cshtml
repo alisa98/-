@@ -2,8 +2,8 @@
 
 <div id="cart">
     <span class="caption">
-        <b>Your cart:</b>
-        @Model.Lines.Sum(x => x.Quantity) item(s),            
+        <b>Корзина:</b>
+        @Model.Lines.Sum(x => x.Quantity) товар(ов),            
         @Model.ComputeTotalValue().ToString("c")
     </span>
         

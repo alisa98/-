@@ -13,7 +13,7 @@ namespace SportsStore.Domain.Entities
         public void AddItem(SportNutrition product, int quantity)
         {
             CartLine line = lineCollection
-                .Where(p => p.Product.NutritionId == product.NutritionId)
+                .Where(p => p.Product.SportNutritionId == product.SportNutritionId)
                 .FirstOrDefault();
 
             if (line == null)
@@ -32,7 +32,7 @@ namespace SportsStore.Domain.Entities
 
         public void RemoveLine(SportNutrition product)
         {
-            lineCollection.RemoveAll(l => l.Product.NutritionId == product.NutritionId);
+            lineCollection.RemoveAll(l => l.Product.SportNutritionId == product.SportNutritionId);
         }
 
         public decimal ComputeTotalValue()

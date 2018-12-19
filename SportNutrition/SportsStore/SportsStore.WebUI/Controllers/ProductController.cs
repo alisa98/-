@@ -12,7 +12,7 @@ namespace SportsStore.WebUI.Controllers
     public class ProductController : Controller
     {
         private readonly IProductRepository _repository;
-        public int PageSize = 4;
+        public int PageSize = 6;
 
         public ProductController(IProductRepository productRepository)
         {
@@ -25,7 +25,7 @@ namespace SportsStore.WebUI.Controllers
             {
                 Products = _repository.Products
                     .Where(p => category == null || p.Category == category)
-                    .OrderBy(p => p.NutritionId)
+                    .OrderBy(p => p.SportNutritionId)
                     .Skip((page - 1) * PageSize)
                     .Take(PageSize),
                 PagingInfo = new PagingInfo

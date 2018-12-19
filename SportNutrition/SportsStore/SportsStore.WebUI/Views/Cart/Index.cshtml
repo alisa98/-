@@ -7,10 +7,10 @@
 <h2>Your cart</h2>
 <table width="90%" align="center">
     <thead><tr>
-        <th align="center">Quantity</th>
-        <th align="left">Item</th>
-        <th align="right">Price</th>
-        <th align="right">Subtotal</th>
+        <th align="center">Количество</th>
+        <th align="left">Товар</th>
+        <th align="right">Цена</th>
+        <th align="right">Итого</th>
     </tr></thead>
 <tbody>
     @foreach(var line in Model.Cart.Lines) {
@@ -22,7 +22,7 @@
                 * line.Product.Price).ToString("c"))</td>
             <td>
                 @using (Html.BeginForm("RemoveFromCart", "Cart")) {        
-                    @Html.Hidden("NutritionId", line.Product.NutritionId)
+                    @Html.Hidden("NutritionId", line.Product.SportNutritionId)
                     @Html.HiddenFor(x => x.ReturnUrl)
                     <input class="actionButtons" type="submit" 
                         value="Удалить" />
@@ -39,6 +39,6 @@
     </tr></tfoot>
 </table>
 <p align="center" class="actionButtons">
-    <a href="@Model.ReturnUrl">Continue shopping</a>
-    @Html.ActionLink("Оплатить", "Оплата")
+    <a href="@Model.ReturnUrl">Вернуться в магазин</a>
+    @Html.ActionLink("Оплатить", "Checkout")
 </p>

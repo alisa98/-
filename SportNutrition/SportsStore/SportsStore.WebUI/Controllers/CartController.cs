@@ -63,7 +63,7 @@ namespace SportsStore.WebUI.Controllers
         {
            
             SportNutrition product = repository.Products
-                .FirstOrDefault(p => p.NutritionId == nutritionId);
+                .FirstOrDefault(p => p.SportNutritionId == nutritionId);
 
             if (product != null)
             {
@@ -75,7 +75,7 @@ namespace SportsStore.WebUI.Controllers
         public RedirectToRouteResult RemoveFromCart(Cart cart, int nutritionId, string returnUrl)
         {
             SportNutrition product = repository.Products
-                .FirstOrDefault(p => p.NutritionId == nutritionId);
+                .FirstOrDefault(p => p.SportNutritionId == nutritionId);
 
             if (product != null)
             {
