@@ -1,0 +1,18 @@
+﻿@model SportsStore.Domain.Entities.SportNutrition
+
+@{
+    ViewBag.Title = "Admin: Edit " + @Model.Name;
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Edit @Model.Name</h1>
+
+@using (Html.BeginForm("Edit", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    
+    @Html.EditorForModel()
+    
+        
+    <input type="submit" value="Сохранить" />
+    @Html.ActionLink("Cancel and return to List", "Index")
+}
